@@ -1,7 +1,51 @@
 
 (function fetchTableJSON(url) {
+	var JSON;
+	
+	(function loadJSON(url) {
+		var xhr = new XMLHttpRequest();
+		
+		xhr.open('GET', url);
+		//xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
+		xhr.onload = function() {
+			console.info(xhr.responseText);
+			
+			return;
+		};
+		
+		xhr.onerror = function() {
+			console.error(xhr);
+			
+			return;
+		};
+		
+		xhr.send();
+		
+		/*
+		$.ajax({
+			url: url,
+			dataType: "txt/json",
+			type: "GET",
+			success: function(result, status, xhr) {
+				console.info(result);
+				
+				return;
+			},
+			error: function(xhr, status, error) {
+				console.error(xhr);
+				console.error(status);
+				console.error(error);
+				
+				return;
+			}
+		});
+		*/
+		
+		return;
+	})(url);
+	
 	$(document).ready(function() {
-		var tableData = SAMPLE_JSON;
+		var tableData = JSON;
 		
 		function parseTable(tableData) {
 			var table = "#dt_basic",
@@ -207,46 +251,5 @@
 		return;
 	});
 	
-	
-	/*
-	var xhr = new XMLHttpRequest();
-	
-	xhr.open('GET', url);
-	//xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
-	xhr.onload = function() {
-		console.info(xhr.responseText);
-		
-		return;
-	};
-	
-	xhr.onerror = function() {
-		console.error(xhr);
-		
-		return;
-	};
-	
-	xhr.send();
-	*/
-	
-	/*
-	$.ajax({
-		url: url,
-		dataType: "txt/json",
-		type: "GET",
-		success: function(result, status, xhr) {
-			console.info(result);
-			
-			return;
-		},
-		error: function(xhr, status, error) {
-			console.error(xhr);
-			console.error(status);
-			console.error(error);
-			
-			return;
-		}
-	});
-	*/
-	
 	return;
-})("https://drive.google.com/open?id=0BxpF7iJw0vhPSENxd1F4SFRIMkE");
+})("https://terencesperringerjr.github.io/table-viewer/DIPHTHERIA_Cases_1916-1948.json");

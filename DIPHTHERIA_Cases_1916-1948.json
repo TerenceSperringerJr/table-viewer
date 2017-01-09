@@ -1,6 +1,6 @@
-var SAMPLE_JSON = {
+{
 	title: "Weekly Diphtheria Cases, 1916-1948",
-	meta: [ "Data provided by Project Tycho, Data Version 1.0.0, released 28 November 2013."],
+	meta: ["Data provided by Project Tycho, Data Version 1.0.0, released 28 November 2013."],
 	header: ["YEAR","WEEK","PITTSBURGH, PA"],
 	data: [
 		["1916","1","27"],
@@ -1720,4 +1720,4 @@ var SAMPLE_JSON = {
 		["1948","51","-"],
 		["1948","52","-"]
 	]
-};
+}
