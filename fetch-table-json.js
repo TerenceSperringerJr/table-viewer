@@ -16,6 +16,7 @@
 		
 		xhr.onerror = function() {
 			console.error(xhr);
+			alert("Error - Unable to fetch data:\n" + xhr.responseText + "\n" + xhr.status + "\n" + xhr.statusText);
 			
 			return;
 		};
@@ -24,7 +25,6 @@
 		
 		return;
 	})(url);
-	
 	
 	function parseTable(tableData) {
 		var table = "#dt_basic",
