@@ -5,12 +5,15 @@ var TABLE_VIEWER =
 	var JSONSource;
 	
 	function TableViewer() {
+		this.URL;
+		
 		return this;
 	}
 	
 	TableViewer.prototype.loadJSONTable = function(url) {
 		var xhr = new XMLHttpRequest(),
 			thisTableViewer = this;
+		this.URL = url;
 		
 		xhr.open('GET', url);
 		//xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
@@ -59,27 +62,19 @@ var TABLE_VIEWER =
 		for(i = 0; i < tableData.meta.length; i++) {
 			row += "<div>" + tableData.meta[i] + "</div>";
 		}
-		$(table).prepend("<caption>" + row + "</caption>");
+		
+		if(row.length > 0) {
+			$(table).prepend("<caption>" + row + "</caption>");
+		}
+		else {
+			$(table + " caption").remove();
+		}
 		
 		row = document.createElement("tr");
 		for(i = 0; i < tableData.header.length; i++) {
 			$(row).append("<th>" + tableData.header[i] + "</th>");
 		}
 		thead.append(row);
-		
-		for(i = 0; i < tableData.data.length; i++) {
-			row = document.createElement("tr");
-			
-			for(j = 0; j < tableData.data[i].length; j++) {
-				$(row).append("<td>" + tableData.data[i][j] + "</td>");
-			}
-			
-			tbody.append(row);
-		}
-		
-		
-		// DO NOT REMOVE : GLOBAL FUNCTIONS!
-		pageSetUp();
 		
 		/* // DOM Position key index //
 		l - Length changing (dropdown)
@@ -97,7 +92,11 @@ var TABLE_VIEWER =
 		*/
 		
 		/* BASIC ;*/
-		$('#dt_basic').dataTable({
+		$('#dt_basic').DataTable({
+			"destroy": true,
+			"processing": true,
+			"serverSide": true,
+			"ajax": TABLE_VIEWER.URL,
 			"sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-12 hidden-xs'l>r>"+
 				"t"+
 				"<'dt-toolbar-footer'<'col-sm-6 col-xs-12 hidden-xs'i><'col-xs-12 col-sm-6'p>>",
@@ -120,6 +119,7 @@ var TABLE_VIEWER =
 		});
 		
 		/* COLUMN FILTER  */
+		/*
 		otable = $('#datatable_fixed_column').DataTable({
 			//"bFilter": false,
 			//"bInfo": false,
@@ -158,8 +158,10 @@ var TABLE_VIEWER =
 				.search( this.value )
 				.draw();
 		});
+		*/
 		
 		/* COLUMN SHOW - HIDE */
+		/*
 		$('#datatable_col_reorder').dataTable({
 			"sDom": "<'dt-toolbar'<'col-xs-12 col-sm-6'f><'col-sm-6 col-xs-6 hidden-xs'C>r>"+
 					"t"+
@@ -181,8 +183,10 @@ var TABLE_VIEWER =
 				responsiveHelper_datatable_col_reorder.respond();
 			}
 		});
+		*/
 		
 		/* TABLETOOLS */
+		/*
 		$('#datatable_tabletools').dataTable({
 			// Tabletools options: 
 			//   https://datatables.net/extensions/tabletools/button_options
@@ -224,6 +228,7 @@ var TABLE_VIEWER =
 				responsiveHelper_datatable_tabletools.respond();
 			}
 		});
+		*/
 		
 		return;
 	}
@@ -235,4 +240,5 @@ var TABLE_VIEWER =
 	TABLE_VIEWER.loadJSONTable(url);
 	
 	return;
-})("https://terencesperringerjr.github.io/table-viewer/DIPHTHERIA_Cases_1916-1948.json");
+})//("https://terencesperringerjr.github.io/table-viewer/DIPHTHERIA_Cases_1916-1948.json");
+("https://terencesperringerjr.github.io/table-viewer/Measles_Cases_1980-1985_pg1.json");
