@@ -2,10 +2,14 @@
 
 var TABLE_VIEWER =
 (function() {
-	var JSONSource;
+	var JSONSource,
+		spoofURL = //"https://terencesperringerjr.github.io/table-viewer/DIPHTHERIA_Cases_1916-1948.json";
+				   "https://terencesperringerjr.github.io/table-viewer/Measles_Cases_1980-1985_pg1.json";
 	
 	function TableViewer() {
 		this.URL;
+		this.JSONData;
+		this.loadJSONTable(spoofURL);
 		
 		return this;
 	}
@@ -18,8 +22,8 @@ var TABLE_VIEWER =
 		xhr.open('GET', url);
 		//xhr.setRequestHeader('Authorization', 'Bearer ' + accessToken);
 		xhr.onload = function() {
-			JSONSource = JSON.parse(xhr.responseText);
-			parseTable(JSONSource);
+			thisTableViewer.JSONData = JSON.parse(xhr.responseText);
+			parseTable(thisTableViewer.JSONData);
 			
 			return;
 		};
@@ -235,10 +239,3 @@ var TABLE_VIEWER =
 	
 	return new TableViewer();
 })();
-
-(function fetchTableJSON(url) {
-	TABLE_VIEWER.loadJSONTable(url);
-	
-	return;
-})//("https://terencesperringerjr.github.io/table-viewer/DIPHTHERIA_Cases_1916-1948.json");
-("https://terencesperringerjr.github.io/table-viewer/Measles_Cases_1980-1985_pg1.json");
