@@ -1,6 +1,7 @@
 {
 	"title": "Measles Cases 1980-1985",
 	"meta": [],
+	"draw": 2,
 	"recordsTotal": 2156,
 	"recordsFiltered": 1438,
 	"header": ["year","week","loc","state","country","loc_type","number","event"],
