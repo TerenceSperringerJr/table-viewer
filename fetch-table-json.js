@@ -8,6 +8,7 @@ var TABLE_VIEWER =
 	
 	function TableViewer() {
 		this.URL;
+		this.dataTable;
 		this.JSONData;
 		this.loadJSONTable(spoofURL);
 		
@@ -96,7 +97,7 @@ var TABLE_VIEWER =
 		*/
 		
 		/* BASIC ;*/
-		$('#dt_basic').DataTable({
+		TABLE_VIEWER.dataTable = $('#dt_basic').DataTable({
 			"destroy": true,
 			"processing": true,
 			"serverSide": true,
