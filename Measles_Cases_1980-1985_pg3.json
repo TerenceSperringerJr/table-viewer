@@ -1,7 +1,9 @@
 {
 	"title": "Measles Cases 1980-1985",
 	"meta": [],
-	"entries": ["1439-2156", "2156"],
+	"draw": 3,
+	"recordsTotal": 2156,
+	"recordsFiltered": 2156,
 	"header": ["year","week","loc","state","country","loc_type","number","event"],
 	"data": [
 		["1981","47","PUERTO RICO","PR","US","STATE","4","CASES"],
