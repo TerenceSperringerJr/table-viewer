@@ -3,8 +3,8 @@
 var TABLE_VIEWER =
 (function() {
 	var JSONSource,
-		spoofURL = //"https://terencesperringerjr.github.io/table-viewer/DIPHTHERIA_Cases_1916-1948.json";
-				   "https://terencesperringerjr.github.io/table-viewer/Measles_Cases_1980-1985_pg1.json";
+		spoofURL = //"https://terencesperringerjr.github.io/table-viewer/diphtheria_cases_1916-1948.json";
+				   "https://terencesperringerjr.github.io/table-viewer/measles_cases_1980-1985_pg1.json";
 	
 	function TableViewer() {
 		this.URL;
@@ -240,9 +240,3 @@ var TABLE_VIEWER =
 	
 	return new TableViewer();
 })();
-
-(function fetchTableJSON(url) {
-	TABLE_VIEWER.loadJSONTable(url);
-	
-	return;
-})("https://terencesperringerjr.github.io/table-viewer/measles_cases_1980-1985_pg1.json");
