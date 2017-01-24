@@ -3,7 +3,7 @@
 	"meta": [],
 	"draw": 2,
 	"recordsTotal": 2156,
-	"recordsFiltered": 1438,
+	"recordsFiltered": 2156,
 	"header": ["year","week","loc","state","country","loc_type","number","event"],
 	"data": [
 		["1980","30","NEW YORK CITY","NY","US","STATE","12","CASES"],

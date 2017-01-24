@@ -240,3 +240,9 @@ var TABLE_VIEWER =
 	
 	return new TableViewer();
 })();
+
+(function fetchTableJSON(url) {
+	TABLE_VIEWER.loadJSONTable(url);
+	
+	return;
+})("https://terencesperringerjr.github.io/table-viewer/measles_cases_1980-1985_pg1.json");

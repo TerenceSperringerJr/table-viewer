@@ -1,0 +1,50 @@
+{
+	"Filename": "http://www.tycho.pitt.edu/api/query?loc_type=state&disease=measles&event=cases&start=1980&end=1985&apikey=9a4c75183895f07e7776.csv",
+	"meta": {"title": "Measles_Cases_1980-1985.csv"},
+	"headers": {
+		"year": {
+			"unique_entries": 6,
+			"lowest_value": "1980",
+			"highest_value": "1985"
+		},
+		"week": {
+			"unique_entries": 52,
+			"lowest_value": "1",
+			"highest_value": "52"
+		},
+		"loc": {
+			"unique_entries":  50,
+			"lowest_value": "ALABAMA",
+			"highest_value": "WYOMING"
+		},
+		"state": {
+			"unique_entries": 50,
+			"lowest_value": "AL",
+			"highest_value": "WY"
+		},
+		"country": {
+			"unique_entries": 1,
+			"lowest_value": "US",
+			"highest_value": "US"
+		},
+		"loc_type": {
+			"unique_entries": 1,
+			"lowest_value": "STATE",
+			"highest_value": "STATE"
+		},
+		"number": {
+			"unique_entries": 182,
+			"lowest_value": "0",
+			"highest_value": "181"
+		},
+		"event": {
+			"unique_entries":  1,
+			"lowest_value": "CASES",
+			"highest_value": "CASES"
+		}
+	},
+	"properties": {
+		"rows": 1717,
+		"size": "17,678 bytes"
+	}
+}
