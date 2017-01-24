@@ -235,4 +235,4 @@ var TABLE_VIEWER =
 	TABLE_VIEWER.loadJSONTable(url);
 	
 	return;
-})("https://terencesperringerjr.github.io/table-viewer/DIPHTHERIA_Cases_1916-1948.json");
+})("https://terencesperringerjr.github.io/table-viewer/measles_cases_1980-1985.json");
